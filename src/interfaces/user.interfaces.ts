@@ -1,8 +1,8 @@
-export interface IUser  {
-    name: String;
-    lastName: String;
-    email: String;
-    password: String;
-    description: String;
+export interface IUser {
+    name: string;
+    lastName: string;
+    email: string;
+    password: string;
+    description: string;
     typeUser: "freelancer" | "client";
 }

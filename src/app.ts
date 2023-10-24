@@ -10,5 +10,5 @@ const app = express();
 app.use(cors());
 app.use(router);
 
-db().then(() => console.log("Conection Ready"));
+db().then(() => console.log("Conection to DB Ready"));
 app.listen(PORT, () => console.log(`Listen on PORT: ${PORT}`));
