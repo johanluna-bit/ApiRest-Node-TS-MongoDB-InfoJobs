@@ -5,4 +5,4 @@ export interface IUser {
     password: string;
     description: string;
     typeUser: "freelancer" | "client";
-}
+};

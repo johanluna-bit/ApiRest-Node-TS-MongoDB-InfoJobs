@@ -1,4 +1,4 @@
-import { Schema, Types, model, Model } from "mongoose";
+import mongoose, { Schema, Types, model, Model } from "mongoose";
 import { IUser } from "../interfaces/user.interfaces";
 
 const ItemSchema  = new Schema<IUser>(
@@ -26,7 +26,7 @@ const ItemSchema  = new Schema<IUser>(
       typeUser: {
         type: String,
         enum: ['freelancer', 'client'],
-      },   
+      },
     },
     { timestamps: true,
         versionKey: false,
@@ -34,3 +34,4 @@ const ItemSchema  = new Schema<IUser>(
 
 const ItemModel = model("items", ItemSchema);
 export default ItemModel;
+
