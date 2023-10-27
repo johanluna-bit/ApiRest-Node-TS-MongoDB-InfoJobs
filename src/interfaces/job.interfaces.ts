@@ -1,8 +1,11 @@
 export interface IJob {
+    id: number;
     title: string;
     description: string;
     budged: Number;
-    plublicationDate: Date;
+    publicationDate: Date;
     state: boolean;
     typeUser: "freelancer" | "client";
+    job: [];
+    proposal: [];
 };

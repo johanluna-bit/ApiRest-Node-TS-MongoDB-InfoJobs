@@ -26,12 +26,18 @@ const ItemSchema  = new Schema<IUser>(
       typeUser: {
         type: String,
         enum: ['freelancer', 'client'],
+        default: 'client',
       },
+      // job: [{
+      //   type:mongoose.Types.ObjectId,
+      //   ref: 'jobs',
+      //   require: true,
+      // }]
     },
     { timestamps: true,
         versionKey: false,
     });
 
-const ItemModel = model("items", ItemSchema);
+const ItemModel = model("item", ItemSchema);
 export default ItemModel;
 

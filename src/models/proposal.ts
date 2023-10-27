@@ -1,14 +1,14 @@
-import { Schema, Types, model, Model } from "mongoose";
+import mongoose, { Schema, Types, model, Model } from "mongoose";
 import { IProposal } from "../interfaces/proposal.interfaces";
 
 
-const ProposalSchema  = new Schema<IProposal>(
+const ProposalSchema  = new Schema(
     {
         price: {
             type: Number,
             required: true,
           },
-          description: {
+        description: {
             type: String,
             required: true,
           },
@@ -16,10 +16,18 @@ const ProposalSchema  = new Schema<IProposal>(
             type: Date,
             default: Date.now
         },
+        item: {
+          type:mongoose.Types.ObjectId,
+          ref: 'item',
+          require: true,
         },
-        { timestamps: true,
-            versionKey: false,
-        });
+        job: {
+          type:mongoose.Types.ObjectId,
+          ref: 'job',
+          require: true,
+        }
+    },
+  );
 
-const ProposalModel = model("proposals", ProposalSchema);
+const ProposalModel = model("proposal", ProposalSchema);
 export default ProposalModel;

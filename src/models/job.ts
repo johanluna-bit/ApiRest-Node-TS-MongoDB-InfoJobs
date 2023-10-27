@@ -11,12 +11,13 @@ const JobSchema  = new Schema<IJob>(
         description: {
             type: String,
             required: true,
+            default: null,
           },
         budged: {
             type: Number,
             required: true
         }, 
-        plublicationDate:{
+        publicationDate:{
             type: Date,
             default: Date.now
         },
@@ -24,10 +25,8 @@ const JobSchema  = new Schema<IJob>(
             type: Boolean,
             default: true
         }
-        },
-        { timestamps: true,
-            versionKey: false,
-        });
+    },
+);
 
-const JobModel = model("jobs", JobSchema);
+const JobModel = model("job", JobSchema);
 export default JobModel;
